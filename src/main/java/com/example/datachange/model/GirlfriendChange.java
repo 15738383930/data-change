@@ -43,5 +43,8 @@ public class GirlfriendChange {
 
     /** 照片 */
     private List<String> photo;
+
+    @ChangeModelProperty(value = "旅游地： 2-夏威夷 4-摩洛哥 8-马尔代夫", bitOperation = true)
+    private Integer touristPlace;
 }
 

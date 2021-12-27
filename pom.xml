@@ -43,9 +43,21 @@
             <version>1.18.20</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!--<dependency>
             <groupId>com.gitee.xuan_zheng</groupId>
             <artifactId>stars-datachange</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.8</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.gitee.xuan_zheng</groupId>
+            <artifactId>stars-datachange</artifactId>
+            <version>1.0.8</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/src/main/resources/lib/stars-datachange-1.0.8.jar</systemPath>
         </dependency>
     </dependencies>
 

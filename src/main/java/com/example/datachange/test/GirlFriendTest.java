@@ -21,6 +21,7 @@ public class GirlFriendTest {
                 .name("刚子")
                 .favoriteFood("1,3,5")
                 .type(2)
+                .touristPlace(12)
                 .socialTime(DateUtils.parse("2018-06-18 00:00:00")).build()));
 
 
