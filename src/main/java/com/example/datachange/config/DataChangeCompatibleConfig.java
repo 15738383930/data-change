@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.stars.datachange.module.Compatible;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -21,18 +20,14 @@ import java.util.*;
 public class DataChangeCompatibleConfig implements Compatible {
 
     @Override
-    public void run(Class<?> dataClass, Map<String, Object> result, Class<? extends Annotation>... annotations) {
-        List<Class<?>> list = new ArrayList<>();
-        if(Objects.nonNull(annotations)){
-            list.addAll(Arrays.asList(annotations));
-        }
+    public void run(Class<?> dataClass, Map<String, Object> result, Collection<Class<? extends Annotation>> annotations) {
         Field[] fields = dataClass.getDeclaredFields();
         for(Field field : fields){
             if(!field.isAccessible()){
                 field.setAccessible(true);
             }
 
-            if(CollectionUtils.isEmpty(list) || list.contains(JsonFormat.class)){
+            if(annotations.contains(JsonFormat.class)){
                 jsonFormat(field, result);
             }
 
@@ -43,7 +38,7 @@ public class DataChangeCompatibleConfig implements Compatible {
 
         }
         if(!dataClass.getSuperclass().equals(Object.class)){
-            run(dataClass.getSuperclass(), result);
+            run(dataClass.getSuperclass(), result, annotations);
         }
     }
 

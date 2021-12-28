@@ -21,7 +21,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ChangeModel(GirlfriendCode.class)
+@ChangeModel(value = GirlfriendCode.class, compatible = JsonFormat.class)
 public class Girlfriend {
 
     /** 名字 */
