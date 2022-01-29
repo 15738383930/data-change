@@ -2,6 +2,7 @@ package com.example.datachange.controller;
 
 import com.example.datachange.model.GirlfriendDb;
 import com.example.datachange.model.Print;
+import com.example.datachange.utils.Audio;
 import com.example.datachange.utils.DateUtils;
 import com.stars.datachange.model.code.GirlfriendCode;
 import com.stars.datachange.utils.DataChangeUtils;
@@ -45,6 +46,8 @@ public class GirlfriendController {
 
         // 女朋友差异分析
         Print.print(DataChangeUtils.dataContrast(girlfriend1, girlfriend2));
+
+        Audio.COMPLETE.playMP3();
 
         return "操作成功！请查看你的控制台。";
     }
