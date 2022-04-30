@@ -21,30 +21,22 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ChangeModel(value = GirlfriendCode.class, compatible = JsonFormat.class)
-public class Girlfriend {
+@ChangeModel(GirlfriendCode.class)
+public class GirlfriendPro {
 
-    /** 名字 */
-    @ChangeModelProperty(value = "姓名", skipComparison = true)
     private String name;
 
-    /** 类型： 1-安静 2-火辣 3-清爽 */
-    @ChangeModelProperty(value = "类型", mapping = "typeText")
+    @ChangeModelProperty
     private Integer type;
 
-    /** 交往时间 */
-    @ChangeModelProperty("交往时间")
-    @JsonFormat(pattern = "yyyy-MM", timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM")
     private Date socialTime;
 
-    /**
-     * 喜欢的食物： 1-牛奶 2-香蕉 -香肠 4-黄瓜 5-火锅
-     */
-    @ChangeModelProperty(value = "喜欢的食物", split = true)
+    @ChangeModelProperty(split = true)
     private String favoriteFood;
 
-    /** 照片 */
-    @ChangeModelProperty(value = "照片", ignore = true)
     private List<String> photo;
+
+    private String typeText;
 }
 

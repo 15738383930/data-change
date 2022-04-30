@@ -4,7 +4,7 @@ spring:
     datasource:
         url: jdbc:mysql:///data-change?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
         username: root
-        password: Zhou$123456!
+        password: root
         driverClassName: com.mysql.cj.jdbc.Driver
 stars:
     dictionary:
@@ -19,5 +19,5 @@ mybatis:
 
 default:
     file:
-        path: E:\DataCaChe\test\
-        ffmpeg-path: E:/APP/ffmpeg-20180227-fa0c9d6-win64-static/bin/ffmpeg.exe
+        path: E:\DataCache\test\
+        ffmpeg-path: D:\Java\ffmpeg\bin/ffmpeg.exe

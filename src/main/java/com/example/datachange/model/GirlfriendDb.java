@@ -28,7 +28,7 @@ public class GirlfriendDb {
     private String name;
 
     /** 类型： 1-安静 2-火辣 3-清爽 */
-    @ChangeModelProperty("类型")
+    @ChangeModelProperty(value = "类型", mapping = "typeTxt")
     private Integer type;
 
     /** 交往时间 */
@@ -45,5 +45,7 @@ public class GirlfriendDb {
     /** 照片 */
     @ChangeModelProperty(value = "照片", ignore = true)
     private List<String> photo;
+
+    private String typeTxt;
 }
 

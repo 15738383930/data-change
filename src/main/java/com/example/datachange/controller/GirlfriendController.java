@@ -21,11 +21,13 @@ public class GirlfriendController {
     public String print() throws Exception {
 
         // 女朋友字典转换
-        Print.print(DataChangeUtils.dataChange(GirlfriendDb.builder()
+        GirlfriendDb build = GirlfriendDb.builder()
                 .name("刚子")
                 .favoriteFood("1,3,5")
                 .type(2)
-                .socialTime(DateUtils.parse("2018-06-18 00:00:00")).build()));
+                .socialTime(DateUtils.parse("2018-06-18 00:00:00")).build();
+        DataChangeUtils.dataChangeToBean(build);
+        System.out.println(build);
 
 
         // 女朋友差异对比:数据字典模式
