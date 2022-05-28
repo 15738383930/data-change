@@ -3,7 +3,7 @@ package com.example.datachange.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.stars.datachange.annotation.ChangeModel;
 import com.stars.datachange.annotation.ChangeModelProperty;
-import com.stars.datachange.model.code.GirlfriendCode;
+import com.example.datachange.model.code.GirlfriendCode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
