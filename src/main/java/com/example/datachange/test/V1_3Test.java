@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * 新功能测试
@@ -22,17 +23,9 @@ public class V1_3Test {
         {
             System.out.println("--------------s------------正确的测试---------------------s------------------");
 
-            String tvalue = DefaultBaseCode.TEST_100.value("100");
-            System.out.println(String.format("正确的测试：%s", tvalue));
+            Stream.of("100", "200").map(DefaultBaseCode.TEST_100::value).forEach(System.out::println);
 
-            String tvalue2 = DefaultBaseCode.TEST_100.value("200");
-            System.out.println(String.format("正确的测试：%s", tvalue2));
-
-            String tvalue3 = DefaultBaseCode.TEST_200.value("200");
-            System.out.println(String.format("正确的测试：%s", tvalue3));
-
-            String tkey = DefaultBaseCode.TEST_200.key("测试二");
-            System.out.println(String.format("正确的测试：%s", tkey));
+            Stream.of("测试二", "测试一").map(DefaultBaseCode.TEST_200::key).forEach(System.out::println);
 
             System.out.println("--------------n------------正确的测试---------------------n------------------");
         }
@@ -42,14 +35,9 @@ public class V1_3Test {
         {
             System.out.println("--------------s------------错误的测试---------------------s------------------");
 
-            String svalue = DefaultBaseCode.STATUS_2.value("100");
-            System.out.println(String.format("错误的测试：%s", svalue));
+            Stream.of("100", "200").map(DefaultBaseCode.STATUS_2::value).forEach(System.out::println);
 
-            String svalue2 = DefaultBaseCode.STATUS_2.value("0");
-            System.out.println(String.format("错误的测试：%s", svalue2));
-
-            String skey = DefaultBaseCode.STATUS_2.key("刚子");
-            System.out.println(String.format("错误的测试：%s", skey));
+            Stream.of("刚子", "测试二").map(DefaultBaseCode.STATUS_2::key).forEach(System.out::println);
 
             System.out.println("--------------n------------错误的测试---------------------n------------------");
         }
