@@ -60,6 +60,6 @@ public class DataChangeCompatibleConfig implements Compatible {
         if(Objects.isNull(result.get(name))){
             return;
         }
-        result.put(name, DateFormatUtils.format((Date) result.get(name), "yyyy年MM月dd日", TimeZone.getTimeZone(anon.timezone())));
+        result.put(name, DateFormatUtils.format((Date) result.get(name), anon.pattern(), TimeZone.getTimeZone(anon.timezone())));
     }
 }

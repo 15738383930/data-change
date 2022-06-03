@@ -3,10 +3,12 @@ package com.example.datachange.controller;
 import com.example.datachange.model.GirlfriendDb;
 import com.example.datachange.model.Print;
 import com.example.datachange.model.code.GirlfriendCode;
+import com.example.datachange.test.PerformanceToBeanTests;
 import com.example.datachange.utils.Audio;
 import com.example.datachange.utils.DateUtils;
 import com.stars.datachange.utils.DataChangeUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -50,6 +52,14 @@ public class GirlfriendController {
         Print.print(DataChangeUtils.dataContrast(girlfriend1, girlfriend2));
 
         Audio.COMPLETE.playMP3();
+
+        return "操作成功！请查看你的控制台。";
+    }
+
+    @GetMapping("{count}")
+    public String performanceTest(@PathVariable("count") int count) {
+
+        PerformanceToBeanTests.test(count);
 
         return "操作成功！请查看你的控制台。";
     }
